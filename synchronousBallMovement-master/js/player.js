@@ -1,0 +1,30 @@
+class Player {
+
+
+    constructor(){}
+
+getcount(){
+    var playercountref = database.ref("playercount");
+    playercountref.on("value", function(data){
+
+playercount=data.val();
+
+    })
+
+}
+
+updatecount(count){
+    database.ref("/").update({
+
+        playercount: count
+    })
+
+    
+}
+
+update(n){
+var playerindex="Players/Player" + playercount
+ database.ref(playerindex).set({name:n})   
+}
+
+}
